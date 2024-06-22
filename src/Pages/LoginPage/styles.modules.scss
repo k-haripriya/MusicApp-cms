@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+body{
+    background-color: $app-theme;
+    margin: 0;
+    padding: 0;
+    
+
+}
+.container{
+    display: flex;
+    flex:1;
+    .leftcontainer{
+        background-color: $app-theme;
+        width: 25%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px;
+       .logo{
+        height: 50px;
+       }
+       .appname{
+        font-family: 'Lily script one';
+        color: $white;
+        font-weight: 900;
+        font-size: xx-large;
+       }
+    }
+    .rightcontainer{
+        background-color: $white;
+        flex:1;
+        border-radius: 40px 0px 0px 40px;
+    }
+}
+
+

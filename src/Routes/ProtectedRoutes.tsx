@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { ProtectedRouteType } from '../Types/Types';
 
 const ProtectedRoutes:React.FC<ProtectedRouteType>=({children}) => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   return (
     isAuthenticated ? <>{children}</>: <Navigate to='/'/>
   )
