@@ -1,0 +1,12 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.videocontainer{
+    position: fixed;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
