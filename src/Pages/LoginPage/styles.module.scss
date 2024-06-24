@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    .transparentcontainer{
+        height: 100px;
+        width: 100px;
+    }
 }
 .videocontainer{
     position: fixed;
