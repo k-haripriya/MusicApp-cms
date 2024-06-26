@@ -30,3 +30,15 @@ export type Buttonprops = {
     className: string;
     textStyle:string;
 }
+
+export interface User {
+    id: string;
+    username: string;
+}
+
+export interface AuthState {
+    isAuthenticated?: boolean;
+    authToken: string | null;
+    refreshToken: string | null;
+    user: User | null;
+}
