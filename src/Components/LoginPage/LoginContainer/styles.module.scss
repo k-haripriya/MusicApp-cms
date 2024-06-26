@@ -1,3 +1,50 @@
-.normal{
-    font-family: "Lily Script One", system-ui;
+
+@import '../../../styles/variables';
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .large{
+        font-family: "Lily Script One", system-ui;
+        text-align: center;
+    }
+    .normal{
+        text-align: center;
+        border-color: $white;
+        font-size: 16px;
+    }
+    .textInputStyle{
+        width: 100%;
+        background-color: transparent;
+        color: $white;
+        box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5);
+
+        &::placeholder{
+            color: $white;
+        }
+
+
+        &:focus{
+            outline: none;
+            box-shadow: 4px 4px 10px $whitesmoke;
+            
+        }
+    }
+    .buttonStyles{
+        width: 100%;
+        background-color: $white;
+        transition: transform 0.2s ease-in-out;
+
+        &:active{
+            transform:scale(0.90)
+        }
+    }
+    .buttonText{
+        color: $black;
+        font-weight: 900;
+        font-size: 14px
+    }
+
+
 }

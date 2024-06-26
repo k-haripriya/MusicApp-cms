@@ -1,5 +1,13 @@
+@import '../../../styles/variables';
 .normalText{
     font-style: normal;
     font-size: 1.3rem;
-    color: white;
+    color: $white;
+    font-weight: 100;
+}
+.largeText{
+    font-style: normal;
+    font-size: 3rem;
+    color: $white;
+    font-weight: 500;
 }

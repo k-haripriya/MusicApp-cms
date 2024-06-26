@@ -6,6 +6,7 @@ export type ProtectedRouteType = {
 
 export type TextInputType = {
     placeholder: string;
+    className: string;
 }
 
 export type transparentContainerType = {
@@ -21,5 +22,11 @@ export type videoPlayerProps = {
 export type TextType = {
     text : string;
     className: string;
+}
 
+export type Buttonprops = {
+    name: string;
+    onClick: Function;
+    className: string;
+    textStyle:string;
 }

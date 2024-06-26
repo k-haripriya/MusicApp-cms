@@ -3,11 +3,11 @@ import styles from './styles.module.scss'
 import { TextType } from '../../../Types/Types'
 import classNames from 'classnames';
 
-const NormalText:React.FC<Partial<TextType>> = (props) => {
+const LargeText:React.FC<Partial<TextType>> = (props) => {
  const { text, className }  = props;
   return (
-    <p className={classNames(styles.normalText,className)}>{text}</p>
+    <p className={classNames(styles.largeText,className)}>{text}</p>
   )
 }
 
-export default NormalText
+export default LargeText

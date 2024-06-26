@@ -6,14 +6,10 @@
     border-width: 1px;
     border-color: $black;
     border-style: solid;
-    width: 35%;
     padding:15px 10px;
     margin: 10px 0px;
 
-    &:focus{
-       outline: none;
-       border-color: $app-theme;
-       border-width: 2px;
+    .text{
+        color: $black;
     }
-
 }
