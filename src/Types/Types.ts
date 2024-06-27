@@ -7,6 +7,8 @@ export type ProtectedRouteType = {
 export type TextInputType = {
     placeholder: string;
     className: string;
+    value: string;
+    setValue: Function;
 }
 
 export type transparentContainerType = {
@@ -22,6 +24,7 @@ export type videoPlayerProps = {
 export type TextType = {
     text : string;
     className: string;
+    
 }
 
 export type Buttonprops = {
@@ -41,4 +44,9 @@ export interface AuthState {
     authToken: string | null;
     refreshToken: string | null;
     user: User | null;
+}
+
+export type loginPayloadType = {
+    email:string;
+    password:string;
 }

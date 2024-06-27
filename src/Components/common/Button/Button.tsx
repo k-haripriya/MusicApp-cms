@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const Button:React.FC<Buttonprops> = (props) => {
   const { name, onClick, className, textStyle} = props;
   return (
-    <button className={classNames(styles.container,className)} onClick={()=>console.log("button clicked")}>
+    <button className={classNames(styles.container,className)} onClick={()=>onClick()}>
         <p className={textStyle}>Login</p>
       </button>
   )

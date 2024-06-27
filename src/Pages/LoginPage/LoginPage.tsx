@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import { videos } from '../../constants/videos'
 import TransparentBackground from '../../Components/common/TransparentBackground/TransparentBackground'
