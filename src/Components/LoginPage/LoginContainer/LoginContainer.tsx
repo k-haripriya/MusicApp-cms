@@ -6,23 +6,14 @@ import { Strings } from '../../../constants/Strings'
 import TextInput from '../../common/TextInput/TextInput'
 import Button from '../../common/Button/Button'
 import { LoginAPI } from '../../../API/LoginApis'
+import jwtDecode from 'jwt-decode'
+import { useDispatch } from 'react-redux'
+import { LoginComponentType, User, loginPayloadType } from '../../../Types/Types'
+import { loginSuccess } from '../../../Redux/Slices/AuthSlice'
 
-const LoginContainer = () => {
-  const [ getUserEmail, setUserEmail ] = useState('');
-  const [ getUserPassword, setUserPassword ] = useState('');
-  const handleSubmit = async () =>{
-    const data = {
-      email:getUserEmail,
-      password:getUserPassword
-    }
-    try{
-      const res = await LoginAPI(data);
-      console.log(JSON.stringify(res))
-    }catch(err)
-    {
-      console.log("Error in calling login Api",err)
-    }
-  }
+const LoginContainer:React.FC<LoginComponentType> = (props) => {
+  const { getUserEmail,setUserEmail,getUserPassword,setUserPassword,handleSubmit } = props
+  
   return (
     <div className={styles.container}>
       <LargeText text={Strings.common.appname} className={styles.large}/>

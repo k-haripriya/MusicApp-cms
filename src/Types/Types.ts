@@ -35,8 +35,8 @@ export type Buttonprops = {
 }
 
 export interface User {
-    id: string;
     username: string;
+    email: string;
 }
 
 export interface AuthState {
@@ -49,4 +49,12 @@ export interface AuthState {
 export type loginPayloadType = {
     email:string;
     password:string;
+}
+
+export type LoginComponentType = {
+    getUserEmail : string,
+    setUserEmail : Function,
+    getUserPassword : string,
+    setUserPassword: Function,
+    handleSubmit : Function
 }
