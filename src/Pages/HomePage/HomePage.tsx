@@ -1,9 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { logoutSuccess } from '../../Redux/Slices/AuthSlice'
 
 const HomePage = () => {
+  const dispatch = useDispatch()
   return (
     <div>
-        <p>HomePage</p>
+       <button onClick={()=>dispatch(logoutSuccess())}>Logout</button>
     </div>
   )
 }

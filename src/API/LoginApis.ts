@@ -14,3 +14,12 @@ export const LoginAPI = async (data: loginPayloadType) => {
     throw err;
   }
 };
+
+export const RefreshToken = () =>{
+  try{
+
+  }catch(err)
+  {
+    throw err;
+  }
+}
