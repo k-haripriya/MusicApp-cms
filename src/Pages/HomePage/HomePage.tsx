@@ -1,12 +1,19 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { logoutSuccess } from '../../Redux/Slices/AuthSlice'
+import SideBar from '../../Components/HomePage/SideBar/SideBar'
+import { Outlet, useNavigate } from 'react-router'
+import styles from './styles.module.scss'
 
 const HomePage = () => {
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const handleOutletNavigation = (screenName:string) =>{
+    navigate(screenName);
+  }
   return (
-    <div>
-       <button onClick={()=>dispatch(logoutSuccess())}>Logout</button>
+    <div className={styles.container}>
+      <SideBar handleOutletNavigation={handleOutletNavigation}/>
+      <Outlet/>
     </div>
   )
 }

@@ -58,3 +58,16 @@ export type LoginComponentType = {
     setUserPassword: Function,
     handleSubmit : Function
 }
+
+export interface IMenuList  {
+    name:string,
+    screenName:string
+}
+
+export interface IMenuTile extends ISideBar{
+    item:IMenuList
+}
+
+export interface ISideBar{
+    handleOutletNavigation:Function
+}
