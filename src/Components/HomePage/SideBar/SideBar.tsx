@@ -5,6 +5,7 @@ import LargeText from '../../common/Text/LargeText'
 import MenuOptionTile from './MenuOptionTile'
 import { IMenuList, ISideBar } from '../../../Types/Types'
 import NormalText from '../../common/Text/NormalText'
+import { Strings } from '../../../constants/Strings'
 
 const SideBar:React.FC<ISideBar>= (props) => {
     const { handleOutletNavigation } = props;
@@ -12,11 +13,11 @@ const SideBar:React.FC<ISideBar>= (props) => {
   const menuList:IMenuList[] = [
     {
         name:'DashBoard',
-        screenName:'/home'
+        screenName:'/home',
     },
     {
         name:'Songs Management',
-        screenName:'songs'
+        screenName:'songs',
     },
     {
         name:'Users Management',
@@ -33,7 +34,10 @@ const SideBar:React.FC<ISideBar>= (props) => {
   ]
   return (
     <div className={styles.container}>
+        <div>
         <img src={Images.logo} className={styles.logo}/>
+        <NormalText text={Strings.common.appname} className={styles.appName}/>
+        </div>
         <div className={styles.menuOptions}>
         {
             menuList.map((item)=>{

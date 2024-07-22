@@ -1,8 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import authReducer from "./Slices/AuthSlice";
+import headerReducer from "./Slices/Headerslice";
 
 const rootReducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    header:headerReducer
 })
 
 

@@ -61,7 +61,7 @@ export type LoginComponentType = {
 
 export interface IMenuList  {
     name:string,
-    screenName:string
+    screenName:string,
 }
 
 export interface IMenuTile extends ISideBar{

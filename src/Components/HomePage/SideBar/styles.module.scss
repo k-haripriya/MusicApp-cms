@@ -10,6 +10,17 @@
         @include flexdirection();
         width: 100%;
     }
+    .logo{
+        margin-top: 20px;
+        height: 60px;
+    }
+    .appName{
+        font-weight: 500;
+        font-family:"Lily Script One", system-ui;
+        font-size: 23px;
+        text-align: center;
+         
+    }
     .menuOptionContainer{
         width: 100%;
         border:1px solid $whitesmoke;

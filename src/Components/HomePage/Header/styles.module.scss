@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+.container{
+    width: 80vw;
+    background-color: $app-theme;
+
+    .headerText{
+        text-align: center;
+        font-weight: 500;
+        font-size: 25px;
+    }
+}
