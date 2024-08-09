@@ -71,3 +71,13 @@ export interface IMenuTile extends ISideBar{
 export interface ISideBar{
     handleOutletNavigation:Function
 }
+
+export interface IAddPopup{
+    children:ReactNode,
+    className: string,
+    closeModal:Function
+}
+
+export interface IAddAlbumsModal{
+    closeModal:Function
+}

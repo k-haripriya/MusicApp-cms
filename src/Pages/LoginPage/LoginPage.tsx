@@ -9,6 +9,7 @@ import { LoginAPI } from '../../API/LoginApis'
 import jwtDecode from 'jwt-decode'
 import { loginSuccess } from '../../Redux/Slices/AuthSlice'
 import { useNavigate } from 'react-router'
+import { sendLoginMailAPI } from '../../API/MailApis'
 
 
 const LoginPage = () => {
@@ -16,6 +17,15 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [ getUserEmail, setUserEmail ] = useState('');
   const [ getUserPassword, setUserPassword ] = useState('');
+
+  const sendMailToTheUser = async(mail:string) =>{
+    try{
+      const response = await sendLoginMailAPI(mail);
+    }catch(err)
+    {
+      console.log("Error in sending mail",err)
+    }
+  }
   const handleSubmit = async () =>{
     const data = {
       email:getUserEmail,
@@ -34,6 +44,7 @@ const LoginPage = () => {
         }
       }
       dispatch(loginSuccess(payload));
+      // sendMailToTheUser(decodedData.email);
       navigate('/home');
       
     }catch(err)

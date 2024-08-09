@@ -7,7 +7,7 @@ const Button:React.FC<Buttonprops> = (props) => {
   const { name, onClick, className, textStyle} = props;
   return (
     <button className={classNames(styles.container,className)} onClick={()=>onClick()}>
-        <p className={textStyle}>Login</p>
+        <p className={textStyle}>{name}</p>
       </button>
   )
 }

@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Button from '../../../Components/common/Button/Button'
+import styles from './styles.module.scss'
+import AddAlbumsModal from './AddAlbumsModal/AddAlbumsModal';
 
 const SongsManagement = () => {
+  const [ getAddAlbumModal, setAlbumModal ] = useState(false);
+  const handleAddSong = () =>{
+    setAlbumModal(!getAddAlbumModal);
+  }
   return (
-    <div>SongsManagement</div>
+    <>
+    <Button name={'Add Album'} onClick={()=>handleAddSong()} className={styles.buttonstyles} textStyle={styles.buttontext}/>
+      {
+        getAddAlbumModal && <AddAlbumsModal closeModal={handleAddSong}/>
+      }
+    </>
+     
   )
 }
 
