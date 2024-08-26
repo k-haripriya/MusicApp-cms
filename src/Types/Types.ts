@@ -111,4 +111,14 @@ export interface IAddalbumPayload{
 
 export interface ICard{
     data: IAddalbumPayload
+    getAignmentType: string
+}
+
+export interface IViewType{
+    handleViewType: Function,
+    getAlignmentType: string,
+}
+
+export interface IListAlbums{
+    getAlignmenttype: string
 }

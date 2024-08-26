@@ -4,4 +4,5 @@ export const API ={
     login:'api/token/',
     sendLoginMail: 'songs/sendMail/',
     addalbum:'songs/addalbum/',
+    getAllAlbums: 'songs/getAllalbums/'
 }

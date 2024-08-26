@@ -1,3 +1,17 @@
+@import '../../../styles/variables';
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .headerText{
+        color: $app-theme ;
+        font-size: 25px;
+        margin-left: 10px;
+        font-weight: 500;
+    }
+}
+
 .buttonstyles{
     width: 200px;
     background-color:bisque;

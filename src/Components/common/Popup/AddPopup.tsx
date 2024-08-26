@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { IAddPopup } from '../../../Types/Types'
 import classNames from 'classnames';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/closeicon.svg'
+import { ReactComponent as CloseIcon } from '../../../assets/svg/closeicon.svg'
 
 const AddPopup:React.FC<IAddPopup> = (props) => {
   const { children,className,closeModal } = props;

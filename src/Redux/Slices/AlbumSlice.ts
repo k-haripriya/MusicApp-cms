@@ -23,8 +23,26 @@ export const postAlbum = createAsyncThunk(
     async (albumData: IAddalbumPayload, { getState }) => {
         const { auth } = getState() as any;
         try{
-            console.log("Album Data",albumData);
         const response = await axios.post(API.baseUrl + API.addalbum, albumData, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': auth.authToken ? `Bearer ${auth.authToken}` : '',
+            }
+        });
+        return response.data;
+    } catch(err)
+    {
+        console.log("Error in posting Album",err);
+    }
+}
+);
+
+export const getAlbumData = createAsyncThunk(
+    'albums/getAlbumData',
+    async (_,{ getState }) => {
+        const { auth } = getState() as any;
+        try{
+        const response = await axios.get(API.baseUrl + API.getAllAlbums,  {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': auth.authToken ? `Bearer ${auth.authToken}` : '',
@@ -50,11 +68,22 @@ const albumSlice = createSlice({
             })
             .addCase(postAlbum.fulfilled, (state, action) => {
                 state.loading = false;
-                state.albums.push(action.payload); 
+                state.albums.push(action.payload)
             })
             .addCase(postAlbum.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || 'Failed to post album';
+            })
+            .addCase(getAlbumData.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getAlbumData.fulfilled, (state, action) => {
+                state.loading = false;
+                state.albums = action.payload; 
+            })
+            .addCase(getAlbumData.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || 'Failed to Get All album';
             });
     },
 });

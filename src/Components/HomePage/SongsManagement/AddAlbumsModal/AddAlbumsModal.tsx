@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import TransparentBackground from "../../../../Components/common/TransparentBackground/TransparentBackground";
+import TransparentBackground from "../../../common/TransparentBackground/TransparentBackground";
 import styles from "./styles.module.scss";
-import AddPopup from "../../../../Components/common/Popup/AddPopup";
-import LargeText from "../../../../Components/common/Text/LargeText";
-import TextInput from "../../../../Components/common/TextInput/TextInput";
-import Button from "../../../../Components/common/Button/Button";
+import AddPopup from "../../../common/Popup/AddPopup";
+import LargeText from "../../../common/Text/LargeText";
+import TextInput from "../../../common/TextInput/TextInput";
+import Button from "../../..//common/Button/Button";
 import {
   IAddalbumPayload,
   IAddAlbumsModal,
   IUploadImagetoStorage,
 } from "../../../../Types/Types";
-import FileInput from "../../../../Components/common/FileInput/FileInput";
-import NormalText from "../../../../Components/common/Text/NormalText";
+import FileInput from "../../../common/FileInput/FileInput";
+import NormalText from "../../../common/Text/NormalText";
 import { UploadImagestoStorage } from "../../../../Utils/UploadToFirebaseStorage";
-import AlertPopup from "../../../../Components/common/AlertMessages/AlertPopup";
+import AlertPopup from "../../../common/AlertMessages/AlertPopup";
 import { AddAlbum } from "../../../../API/SongManagementApis";
 import { useDispatch, useSelector } from "react-redux";
 import { postAlbum } from "../../../../Redux/Slices/AlbumSlice";
 import { AppDispatch } from "../../../../Redux/Store";
 import { RootState } from "../../../../Redux/Reducers";
-import Loader from "../../../../Components/common/Loader/Loader";
+import Loader from "../../../common/Loader/Loader";
 import { unwrapResult } from "@reduxjs/toolkit";
 
 const AddAlbumsModal: React.FC<IAddAlbumsModal> = (props) => {
