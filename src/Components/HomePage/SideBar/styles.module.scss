@@ -2,7 +2,7 @@
 @import '../../../styles/mixins.scss';
 
 .container{
-    width: 20vw;
+    width: 13vw;
     background-color: $app-theme;
     height: 100vh;
     @include flexdirection($justifycontent:space-between);
@@ -29,6 +29,7 @@
     }
     .menuOptionText{
         font-weight: 500;
+        font-size: 16px;
     }
 
     .logoutcontainer{

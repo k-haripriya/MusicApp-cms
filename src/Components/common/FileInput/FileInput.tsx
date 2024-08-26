@@ -1,37 +1,35 @@
 import React, { useRef } from 'react'
+import styles from './styles.module.scss'
+import NormalText from '../Text/NormalText';
+import { IFileInput } from '../../../Types/Types';
 
-const FileInput = () => {
+const FileInput:React.FC<IFileInput> = (props) => {
+  const { setValue, setFile } = props;
     const fileInputRef = useRef<HTMLInputElement  | null>(null);
     const handleButtonClick = () => {
          fileInputRef?.current?.click();
       };
     
       const handleFileChange = (event:any) => {
-        const fileName = event.target.files[0]?.name || 'No file chosen';
-        console.log('Selected file:', fileName);
+        if(event.target.files[0]?.name)
+        {
+          setValue(event.target.files[0].name);
+          setFile(event.target.files[0])
+        }
       };
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div className={styles.container}>
     <button
       type="button"
       onClick={handleButtonClick}
-      style={{
-        padding: '10px 20px',
-        backgroundColor: '#007BFF',
-        color: '#FFF',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        marginRight: '10px',
-      }}
+      className={styles.button}
     >
       Choose File
     </button>
-    {/* <span style={{ fontSize: '14px' }}>No file chosen</span> */}
     <input
       type="file"
       ref={fileInputRef}
-      style={{ display: 'none' }}
+      className={styles.input}
       onChange={handleFileChange}
     />
   </div>

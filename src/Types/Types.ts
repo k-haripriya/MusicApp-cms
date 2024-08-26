@@ -9,6 +9,7 @@ export type TextInputType = {
     className: string;
     value: string;
     setValue: Function;
+    type?: string;
 }
 
 export type transparentContainerType = {
@@ -80,4 +81,34 @@ export interface IAddPopup{
 
 export interface IAddAlbumsModal{
     closeModal:Function
+}
+
+export interface IFileInput{
+    setValue:Function,
+    setFile: Function,
+}
+
+export interface IUploadImagetoStorage{
+    directoryName:string,
+    filename:string,
+    file:File,
+}
+
+export interface IAlertPopup{
+    type:string,
+    title:string,
+    handleClose:Function
+}
+
+export interface IAddalbumPayload{
+    title:string,
+    artist:string,
+    coverimg:string,
+    release_date:string,
+    genre:string
+
+}
+
+export interface ICard{
+    data: IAddalbumPayload
 }

@@ -4,12 +4,12 @@ import { TextInputType } from '../../../Types/Types'
 import classNames from 'classnames';
 
 const TextInput:React.FC<TextInputType>= (props) => {
-  const { placeholder, className, value, setValue } = props;
+  const { placeholder, className, value, setValue, type } = props;
   const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   }
   return (
-        <input placeholder={placeholder} className={classNames(styles.container,className)} value={value} onChange={handleTextChange} />
+        <input type={type} placeholder={placeholder} className={classNames(styles.container,className)} value={value} onChange={handleTextChange}  />
   )
 }
 

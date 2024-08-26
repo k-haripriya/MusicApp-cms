@@ -5,4 +5,6 @@ const Store = configureStore({
     reducer:rootReducer
 })
 
+export type AppDispatch = typeof Store.dispatch;
+
 export default Store;
